@@ -4,6 +4,61 @@ title: お知らせ
 
 # お知らせ --- milter managerの歴史
 
+## 2.2.5: 2022-12-12 {#release-2-2-5}
+
+### milter manager
+
+#### 修正
+
+  * `netstat`関連のエラーが発生する問題を修正しました。
+    [GH-176] [Christianさんが報告]
+
+### milter client
+
+#### 改良
+
+  * `milter.run_gc_on_maintain=`という設定を追加しました。
+
+#### 修正
+
+  * 生きている`Milter::ClientSession`がGCされるかもしれない問題を修正しました。
+
+### 感謝
+
+  * Christianさん
+
+## 2.2.4: 2022-12-10 {#release-2-2-4}
+
+### パッケージ
+
+#### 修正
+
+  * deb: manの場所が間違っていた問題を修正しました。
+
+  * deb: `Conflicts`の設定を修正しました。
+
+### ドキュメント
+
+#### 改良
+
+  * AlmaLinux 8: 漏れていた`dnf module -y enable ruby:3.0`を追加しました。
+    [milter-manager-users-ja]
+    [ymatsukiさんが報告]
+
+  * AlmaLinux 8: 不要な`milter_mail_macros`の変更を削除しました。
+    [milter-manager-users-ja 61]
+    [ymatsukiさんが報告]
+
+### milter manager
+
+#### 改良
+
+  * libevとの連携を改良しました。
+
+### 感謝
+
+  * ymatsukiさん
+
 ## 2.2.3: 2022-10-04 {#release-2-2-3}
 
 ### Python

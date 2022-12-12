@@ -5,6 +5,30 @@ description: The history of milter manager
 
 # NEWS --- The history of milter manager
 
+## 2.2.5: 2022-12-12 {#release-2-2-5}
+
+### milter manager
+
+#### Fixes
+
+  * Fixed a bug that `netstat` related error is happen.
+    [GH-176] [Reported by Christian]
+
+### milter client
+
+#### Improvements
+
+  * Added `milter.run_gc_on_maintain=` configuration.
+
+#### Fixes
+
+  * Fixed a GC related bug that running `Milter::ClientSession` may be
+    GC-ed.
+
+### Thanks
+
+  * Christian
+
 ## 2.2.4: 2022-12-10 {#release-2-2-4}
 
 ### Packages
