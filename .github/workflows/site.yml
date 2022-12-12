@@ -25,7 +25,11 @@ jobs:
           bundler-cache: true
       - name: Detect version
         run: |
-          version=$(ruby -r yaml -e 'print YAML.load(ARGF.read)["version"]' _config.yml)
+          version=$(ruby \
+                      -r date \
+                      -r yaml \
+                      -e 'print YAML.safe_load(ARGF.read, permitted_classes: [Date])["version"]' \
+                      _config.yml)
           echo "VERSION=${version}" >> $GITHUB_ENV
       - uses: actions/checkout@v3
         with:
