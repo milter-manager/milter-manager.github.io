@@ -31,20 +31,20 @@ jobs:
                       -e 'print YAML.safe_load(ARGF.read, permitted_classes: [Date])["version"]' \
                       _config.yml)
           echo "VERSION=${version}" >> $GITHUB_ENV
-      - uses: actions/checkout@v3
-        with:
-          repository: milter-manager/milter-manager
-          path: milter-manager
-          ref: ${{ env.VERSION }}
       - uses: actions/configure-pages@v2
         id: pages
-      - name: Build
+      - name: Build site
         run: |
           bundle exec jekyll \
             build \
             --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - uses: actions/checkout@v3
+        with:
+          repository: milter-manager/milter-manager
+          path: milter-manager.source
+          ref: ${{ env.VERSION }}
       - name: Install dependencies
         run: |
           sudo apt update
@@ -68,7 +68,7 @@ jobs:
             -Ddoc=true \
             -Dsource-reference=${{ github.event.inputs.source-reference }}\
             milter-manager.build \
-            milter-manager
+            milter-manager.source
       - name: Build
         run: |
           meson compile -C milter-manager.build
