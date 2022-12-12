@@ -1,12 +1,9 @@
 name: Site
 
 on:
-  workflow_dispatch:
-    inputs:
-      source-reference:
-        description: Tag or branch name to be built.
-        required: false
-        default: 'master'
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -22,21 +19,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          repository: milter-manager/milter-manager
-          path: milter-manager
-          ref: ${{ github.event.inputs.source-reference }}
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.1"
           bundler-cache: true
-        env:
-          BUNDLE_GEMFILE: milter-manager/site/Gemfile
+      - name: Detect version
+        run: |
+          version=$(ruby -r yaml -e 'print YAML.load(ARGF.read)["version"]' _config.yml)
+          echo "VERSION=${version}" >> $GITHUB_ENV
+      - uses: actions/checkout@v3
+        with:
+          repository: milter-manager/milter-manager
+          path: milter-manager
+          ref: ${{ env.VERSION }}
       - uses: actions/configure-pages@v2
         id: pages
       - name: Build
         run: |
-          cd milter-manager/site
           bundle exec jekyll \
             build \
             --baseurl "${{ steps.pages.outputs.base_path }}"
@@ -56,7 +55,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.ccache
-          key: site-ccache-${{ hashFiles('milter-manager/libmilter/**', 'milter-manager/milter/**', 'milter-manager/src/**', 'milter-manager/tool/**') }}
+          key: site-ccache-${{ env.VERSION }}
           restore-keys: site-ccache-
       - name: Setup
         run: |
@@ -74,13 +73,11 @@ jobs:
           sudo meson install -C milter-manager.build
       - name: Move reference manuals
         run: |
-          mkdir -p milter-manager/site/_site/reference/
+          mkdir -p _site/reference/
           cp -a \
             /tmp/local/share/doc/milter-manager/* \
-            milter-manager/site/_site/reference/
+            _site/reference/
       - uses: actions/upload-pages-artifact@v1
-        with:
-          path: milter-manager/site/_site/
 
   deploy:
     environment:
