@@ -17,8 +17,8 @@ title: milter manager
 description:
   en: an effective anti-spam with milter
   ja: milterを使った効果的な迷惑メール対策
-version: 2.2.4
-release_date: 2022-12-10
+version: 2.2.5
+release_date: 2022-12-12
 timezone: Asia/Tokyo
 
 url: https://milter-manager.github.io
