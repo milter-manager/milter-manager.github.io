@@ -5,6 +5,15 @@ description: The history of milter manager
 
 # NEWS --- The history of milter manager
 
+## 2.2.6: 2023-01-13 {#release-2-2-6}
+
+### Packages
+
+#### Improvements
+
+  * AlmaLinux: Updated the bundled Ruby-GNOME to 4.0.9. It fixes a
+    crash bug that is related closure and GC.
+
 ## 2.2.5: 2022-12-12 {#release-2-2-5}
 
 ### milter manager
