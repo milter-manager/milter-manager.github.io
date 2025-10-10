@@ -31,7 +31,7 @@ jobs:
                       -e 'print YAML.safe_load(ARGF.read, permitted_classes: [Date])["version"]' \
                       _config.yml)
           echo "VERSION=${version}" >> $GITHUB_ENV
-      - uses: actions/configure-pages@v2
+      - uses: actions/configure-pages@v5
         id: pages
       - name: Build site
         run: |
