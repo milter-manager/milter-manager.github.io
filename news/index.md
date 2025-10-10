@@ -5,6 +5,14 @@ description: The history of milter manager
 
 # NEWS --- The history of milter manager
 
+## 2.2.9: 2025-10-10 {#release-2-2-9}
+
+### Packages
+
+#### Fixes
+
+  * Fixed packaging mistake.
+
 ## 2.2.8: 2025-10-10 {#release-2-2-8}
 
 ### milter manager
