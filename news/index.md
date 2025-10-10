@@ -5,6 +5,45 @@ description: The history of milter manager
 
 # NEWS --- The history of milter manager
 
+## 2.2.8: 2025-10-10 {#release-2-2-8}
+
+### milter manager
+
+#### Improvements
+
+  * Ruby: Added support for body data that includes `\0` on end of
+    message event.
+    * Patch by nori.
+    * [GH-192](https://github.com/milter-manager/milter-manager/issues/192)
+
+  * Changed to detect Rspamd instead of rmilter.
+
+  * Dropped support for rmilter.
+
+  * `milter-manager-log-analyzer`: Added support for Rspamd.
+
+### Packages
+
+#### Improvements
+
+  * CentOS: Dropped support for CentOS 7.
+
+  * Ubuntu: Dropped support for Ubuntu 18.04.
+
+  * Ubuntu: Dropped support for Ubuntu 20.04.
+
+  * Ubuntu: Added support for Ubuntu 24.04.
+
+  * Debian: Dropped support for Debian GNU/Linux bullseye.
+
+  * Debian: Added support for Debian GNU/Linux trixie.
+
+  * AlmaLinux: Added support for AlmaLinux 10.
+
+### Thanks
+
+  * nori
+
 ## 2.2.7: 2023-01-31 {#release-2-2-7}
 
 ### Packages

@@ -4,6 +4,44 @@ title: お知らせ
 
 # お知らせ --- milter managerの歴史
 
+## 2.2.8: 2025-10-10 {#release-2-2-8}
+
+### milter manager
+
+#### 改良
+
+  * Ruby: end of messageイベントの時に`\0`入りの本文データをサポートしました。
+    * noriさんがパッチ提供。
+    * [GH-192](https://github.com/milter-manager/milter-manager/issues/192)
+
+  * rmilterの代わりにRspamdを検出するように変更しました。
+
+  * rmilterのサポートを削除しました。
+
+  * `milter-manager-log-analyzer`: Rspamdをサポートしました。
+
+### パッケージ
+
+#### 改良
+
+  * CentOS: CentOS 7のサポートを終了しました。
+
+  * Ubuntu: Ubuntu 18.04のサポートを終了しました。
+
+  * Ubuntu: Ubuntu 20.04のサポートを終了しました。
+
+  * Ubuntu: Ubuntu 24.04をサポートしました。
+
+  * Debian: Debian GNU/Linux bullseyeのサポートを終了しました。
+
+  * Debian: Debian GNU/Linux trixieをサポートしました。
+
+  * AlmaLinux: AlmaLinux 10をサポートしました。
+
+### 感謝
+
+  * noriさん
+
 ## 2.2.7: 2023-01-31 {#release-2-2-6}
 
 ### パッケージ
