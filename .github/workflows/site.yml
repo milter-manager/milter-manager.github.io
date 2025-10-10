@@ -81,7 +81,7 @@ jobs:
           cp -a \
             /tmp/local/share/doc/milter-manager/* \
             _site/reference/
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v4
 
   deploy:
     environment:
