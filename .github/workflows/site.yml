@@ -66,7 +66,7 @@ jobs:
           meson setup \
             --prefix=/tmp/local \
             -Ddoc=true \
-            -Dsource-reference=${{ github.event.inputs.source-reference }}\
+            -Dsource-reference=${VERSION} \
             milter-manager.build \
             milter-manager.source
       - name: Build
