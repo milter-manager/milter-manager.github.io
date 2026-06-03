@@ -5,6 +5,31 @@ description: The history of milter manager
 
 # NEWS --- The history of milter manager
 
+## 2.3.1: 2026-06-03 {#release-2-3-1}
+
+### milter manager
+
+#### Improvements
+
+  * Added support for rspamd-proxy.
+    * [GH-247](https://github.com/milter-manager/milter-manager/issues/247)
+
+### Packages
+
+#### Improvements
+
+  * Added support for Ubuntu 26.04.
+
+#### Fixes
+
+  * Added missing sign to RPMs.
+    * Reported by by Julian Atkins.
+    * [GH-249](https://github.com/milter-manager/milter-manager/issues/249)
+
+### Thanks
+
+  * Julian Atkins
+
 ## 2.2.9: 2025-10-10 {#release-2-2-9}
 
 ### Packages

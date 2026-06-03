@@ -4,6 +4,31 @@ title: お知らせ
 
 # お知らせ --- milter managerの歴史
 
+## 2.3.1: 2026-06-03 {#release-2-3-1}
+
+### milter manager
+
+#### 改良
+
+  * rspamd-proxyに対応しました。
+    * [GH-247](https://github.com/milter-manager/milter-manager/issues/247)
+
+### パッケージ
+
+#### 改良
+
+  * Ubuntu 26.04をサポートしました。
+
+#### 修正
+
+  * RPMの署名漏れを修正しました。
+    * Julian Atkinsさんが報告。
+    * [GH-249](https://github.com/milter-manager/milter-manager/issues/249)
+
+### 感謝
+
+  * Julian Atkinsさん
+
 ## 2.2.9: 2025-10-10 {#release-2-2-9}
 
 ### パッケージ
